@@ -57,14 +57,16 @@
 .sessions-feed{
     display: flex;
     flex-direction: column;
+    margin-top: 67px;
     margin-bottom: 89px;
 }
 
-.sessions-feed .text-box{
+.text-box{
     height: 110px;
     font-size: 24px;
     color: #293845;
     line-height: 110px;
+    text-align: center;
 }
 
 .day {
@@ -126,4 +128,74 @@
 .sessions-feed-bottom .movie-title{
     font-size: 26px;
     color: #293845;
+    border: 1px solid #9EADBA;
+}
+
+.seats-feed{
+    display: flex;
+    margin-top: 67px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+
+}
+
+.seats-grid{
+    width: 300px;
+    display: flex;
+    flex-direction: row;
+}
+
+.seat{
+    width: 24px;
+    height: 24px;
+    margin-left: 3.5px;
+    margin-right: 3.5px;
+    margin-top: 9px;
+    margin-bottom: 9px;
+    background: #C3CFD9;
+    border: 1px solid #808F9D;
+    box-sizing: border-box;
+    border-radius: 12px;
+    text-align: center;
+    line-height: 24px;
+}
+
+.seat.selected{
+    background-color: #8DD7CF;
+}
+
+.seat.unavailable{
+    background-color: #FBE192;
+}
+
+.user-input-title{
+    width: 327px;
+    height: 25px;
+    font-size: 18px;
+    color:#293845;
+    text-align: start;
+}
+
+.user-input-field input{
+    width: 327px;
+    height: 50px;
+    font-size: 18px;
+    color:#293845;
+    text-align: start;
+    padding-left 18px;
+    margin-bottom: 7px;
+}
+
+.book-seats-button{
+    width: 225px;
+    height: 42px;
+    margin-top: 50px;
+    margin-bottom: 147px;
+    color: white;
+    font-size: 18px;
+    line-height: 42px;
+    text-align: center;
+    background-color: #E8833A;
+    border-radius: 3px;
 }
