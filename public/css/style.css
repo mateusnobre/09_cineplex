@@ -1,0 +1,14 @@
+body {
+    font-family: 'Roboto', sans-serif;
+}
+.top {
+    height: 67px;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    background-color: #C3CFD9;
+    line-height: 67px;
+    font-size: 34px;
+    color: #E8833A;
+    text-align: center;
+}
