@@ -1,4 +1,6 @@
+import { Link } from "react-router-dom";
 export default function MovieFeed(props) {
+    
    return(
         <div class='movie-feed'>
             <div class='text-box'>
@@ -6,9 +8,11 @@ export default function MovieFeed(props) {
             </div>
             <div class='movies'>
                 {props.moviesData.map(movie =>
-                    <div class = 'movie'>
-                        <img src={movie.posterURL}></img>
-                    </div>
+                    <Link to={'sessoes/' + (movie.id)}>
+                        <div class = 'movie' key={movie.id}>
+                            <img src={movie.posterURL} alt={movie.title}></img>
+                        </div>
+                    </Link>
                     )}
             </div>
         </div>
