@@ -169,10 +169,53 @@
     background-color: #FBE192;
 }
 
-.seats-subtitle{
+.seats-subtitles-grid{
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-top: 16px;
+}
+
+.seat-subtitle{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-left: 12px;
+    margin-right: 12px;
+}
+
+.seat-subtitle .selected{
+    width: 25px;
+    height: 25px;
+    background: #8DD7CF;
+    border: 1px solid #1AAE9E;
+    box-sizing: border-box;
+    border-radius: 17px;
+}
+
+.seat-subtitle .available{
+    width: 25px;
+    height: 25px;
+    background: #C3CFD9;
+    border: 1px solid #7B8B99;
+    box-sizing: border-box;
+    border-radius: 17px;
+}
+
+.seat-subtitle .unavailable{
+    width: 25px;
+    height: 25px;
+    background: #FBE192;
+    border: 1px solid #F7C52B;
+    box-sizing: border-box;
+    border-radius: 17px;
+}
+
+.seat-subtitle .text-box{
+    font-size: 13px;
+    line-height: 26px;
+    color: #4E5A65;
 }
 
 .user-input-title{

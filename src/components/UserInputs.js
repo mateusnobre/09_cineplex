@@ -1,4 +1,5 @@
 export default function UserInputs(props){
+    console.log(props);
     return(
         <div>
             <div class='user-input-title'>Nome do comprador:</div>

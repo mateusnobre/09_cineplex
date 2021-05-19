@@ -28,8 +28,8 @@ export default function App() {
                     <MovieFeed moviesData={moviesData}/>
 				</Route>
 				<Route path="/sessoes/:idMovie" exact component={Sessions}/>
-				<Route path="/assentos/:idSession" exact component={() => <ChooseSeats setSeats={setSeats} clientName={clientName} clientCPF={clientCPF} setClientName={setClientName} setClientCPF={setClientCPF}/>}/>
-				<Route path="/success" exact component={() => <Success clientCPF={clientCPF} clientName={clientName} seats={seats}/>}/>
+				<Route path="/assentos/:idSession" exact component={() => <ChooseSeats setSeats={setSeats} seats={seats} clientName={clientName} clientCPF={clientCPF} setClientName={setClientName} setClientCPF={setClientCPF}/>}/>
+				<Route path="/sucesso" exact component={() => <Success clientCPF={clientCPF} clientName={clientName} seats={seats}/>}/>
             </Switch>
 		</BrowserRouter>
         </div>        
