@@ -8,7 +8,7 @@ export default function MovieFeed(props) {
             </div>
             <div class='movies'>
                 {props.moviesData.map(movie =>
-                    <Link to={'sessoes/' + (movie.id)}>
+                    <Link to={'sessoes/' + (movie.id)} style={{ textDecoration: 'none' }}>
                         <div class = 'movie' key={movie.id}>
                             <img src={movie.posterURL} alt={movie.title}></img>
                         </div>

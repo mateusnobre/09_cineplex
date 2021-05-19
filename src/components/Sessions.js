@@ -3,19 +3,19 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 import Showtimes from './Showtimes'
 
-export default function Sessions() {
+export default function Sessions(props) {
 	const params = useParams();
     const[movieSessions, setMovieSessions] = useState({});
     const[daysData, setDaysData] = useState([]);
     useEffect(() => {
         const movieSessionsRequest = axios.get(`https://mock-api.bootcamp.respondeai.com.br/api/v2/cineflex/movies/${params.idMovie}/showtimes`);
-        movieSessionsRequest.then(response => {setMovieSessions(response.data); setDaysData(response.data.days)});
+        movieSessionsRequest.then(response => {setMovieSessions(response.data); setDaysData(response.data.days); props.setMovieTitle(movieSessions.title)});
     }, [params.idMovie]);
 
 	return (
 		<div class='sessions-feed'>
             <div class='text-box'>Selecione o horário</div>
-            <Showtimes days={daysData}/>
+            <Showtimes days={daysData} setShowtime={props.setShowtime}/>
             <div class='sessions-feed-bottom'>
                 <div class='thumbnail'>
                     <img src={movieSessions.posterURL} alt={movieSessions.title}></img>

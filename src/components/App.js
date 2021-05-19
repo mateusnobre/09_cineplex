@@ -13,6 +13,8 @@ export default function App() {
     const[seats, setSeats] = useState([]);
     const[clientName, setClientName] = useState('');
     const[clientCPF, setClientCPF] = useState('');
+    const[showtime, setShowtime] = useState('');
+    const[movieTitle, setMovieTitle] = useState('');
     useEffect(() => {
         const moviesRequest = axios.get('https://mock-api.bootcamp.respondeai.com.br/api/v2/cineflex/movies');
         moviesRequest.then(response => {setMoviesData(response.data);});
@@ -27,9 +29,9 @@ export default function App() {
 					<Top />
                     <MovieFeed moviesData={moviesData}/>
 				</Route>
-				<Route path="/sessoes/:idMovie" exact component={Sessions}/>
+				<Route path="/sessoes/:idMovie" exact component={() => <Sessions setMovieTitle={setMovieTitle} setShowtime={setShowtime}/>}/>
 				<Route path="/assentos/:idSession" exact component={() => <ChooseSeats setSeats={setSeats} seats={seats} clientName={clientName} clientCPF={clientCPF} setClientName={setClientName} setClientCPF={setClientCPF}/>}/>
-				<Route path="/sucesso" exact component={() => <Success clientCPF={clientCPF} clientName={clientName} seats={seats}/>}/>
+				<Route path="/sucesso" exact component={() => <Success showtime={showtime} movieTitle={movieTitle} clientCPF={clientCPF} clientName={clientName} seats={seats}/>}/>
             </Switch>
 		</BrowserRouter>
         </div>        

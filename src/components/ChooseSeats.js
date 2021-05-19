@@ -18,6 +18,13 @@ export default function ChooseSeats(props) {
             setSeatsData(response.data.seats);
         });
     }, [params.idSession]);
+    function sendOrder(){
+        const orderData = {"name": props.clientName, "cpf": props.clientCPF, "ids": props.seats};
+        axios.post('https://mock-api.bootcamp.respondeai.com.br/api/v2/cineflex/seats/book-many', orderData);
+        props.setSeats([]);
+        props.setClientCPF('');
+        props.setClientName('');
+    }
 
 	return (
         <div class ='seats-feed'>
@@ -25,8 +32,8 @@ export default function ChooseSeats(props) {
             <Seats seatsData={seatsData} setSeats={props.setSeats} seats={props.seats}/>
             <SeatsSubtitles/>
             <UserInputs clientName={props.clientName} clientCPF={props.clientCPF} setClientName={props.setClientName} setClientCPF={props.setClientCPF}/>
-            <Link to='/sucesso'>
-                <div class='book-seats-button'> Reservar assento(s)</div>
+            <Link to='/sucesso' style={{ textDecoration: 'none' }}>
+                <div class='book-seats-button' onClick={sendOrder}> Reservar assento(s)</div>
             </Link>
             <div class='sessions-feed-bottom'>
                 <div class='thumbnail'>
